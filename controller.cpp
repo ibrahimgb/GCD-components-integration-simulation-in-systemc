@@ -1,9 +1,9 @@
 #include "tb.h"
 void tb::do_tb(){
     cout << "do_tb is starting ..." << endl;
-//cout << "@" << sc_time_stamp() << " Create VCD file" << endl;
+cout << "@" << sc_time_stamp() << " Create VCD file" << endl;
 //sc_trace_file* wf = sc_create_vcd_trace_file("vcd/gcd");
-//cout << "@" << sc_time_stamp() << " Dump the desired signals" << endl;
+cout << "@" << sc_time_stamp() << " Dump the desired signals" << endl;
 //sc_trace(wf, clk, "Clock");
 //sc_trace(wf, reset, "Reset");
 //sc_trace(wf, valid, "Valid");
@@ -39,10 +39,10 @@ cout << "@" << sc_time_stamp() << " Set the Valid signal to 0" << endl;
 valid.write(0);
 wait(1);
 cout << "@" << sc_time_stamp() << " Wait a few clock cycles to see the result" << endl;
-while(ready.read() != 1){
+//while(ready.read() != 1){
 cout << "@" << sc_time_stamp() << " Ready not set. Wait for 1 clock cycle" << endl;
 wait(1);
-}
+//}
 cout << "@" << sc_time_stamp() << " Ready signal is set. GCD is " << GCD << endl;
 wait(5);
 sc_stop();
